@@ -21,7 +21,7 @@ var dashedLineY = 800
 
 ///posición de Delorean
 var deloreanWidth = w2-30
-var deloreanHeight = h -80
+var deloreanHeight = h -95
 
 function boxCanvas() {
   
@@ -32,8 +32,8 @@ function boxCanvas() {
 
 function drawGreen(){
   ctx.fillStyle = "green";
-  ctx.beginPath()
-  ctx.rect(0, 0, w, h)
+  ctx.beginPath();
+  ctx.rect(0, 0, w, h);
   ctx.fill();
   ctx.closePath();
 }
@@ -41,7 +41,7 @@ function drawGreen(){
 function drawRectWhite(){
 
   ctx.fillStyle = "white";
-  ctx.beginPath()
+  ctx.beginPath();
   ctx.rect(+30, 0, w-60, h)
   ctx.fill();
   ctx.closePath();
@@ -49,9 +49,9 @@ function drawRectWhite(){
 }
 
 function drawGrey(){
-  ctx.fillStyle = "grey";
-  ctx.beginPath()
-  ctx.rect(+40, 0, w-80, h)
+  ctx.fillStyle = "black";
+  ctx.beginPath();
+  ctx.rect(+40, 0, w-80, h);
   ctx.fill();
   ctx.closePath();
 
@@ -68,6 +68,21 @@ function drawMiniWhite(){
   ctx.stroke()
 }
 
+// var obstacle = 100
+// function createObstacle(){
+  
+//  ctx.beginPath()
+//  ctx.rect = 50
+//  ctx.strokeStyle = "red"
+//  ctx.moveTo(w / 2 , obstacle)
+//  ctx.lineTo(w / 2, 0)
+// }
+
+// function drawObstacle(){
+//     ctx.fillStyle = "black";
+//     ctx.fillRect(x, y, w, h);
+// }
+
 function clearScreen(){
   ctx.clearRect(0, 0, w, h);
 }
@@ -75,38 +90,25 @@ function clearScreen(){
 ///////////////////////////////////////////
 ///////Parte Delorean
 var imgDelorean = new Image();
-imgDelorean.src ='./images/DeloreanR.png'; ///./images/DeloreanR.png
+imgDelorean.src ='./images/x_wing.png';
 
 imgDelorean.onload = function(){
   paintDelorean()
 }
-var deloreanSize = 60 
+var deloreanSize = 90 
 
-
-//var obstacle = 100
-//function createObstacle(){
-  
-//  ctx.beginPath()
-//  ctx.rect = 50
-//  ctx.strokeStyle = "red"
-//  ctx.moveTo(w / 2 , obstacle)
-//  ctx.lineTo(w / 2, 0)
-//}
 
 
 function paintDelorean(){
-
-  
   clearScreen()
 
-  
   boxCanvas()
   drawGreen()
   drawRectWhite()
   drawGrey()
   drawMiniWhite()
   ctx.drawImage(imgDelorean, deloreanWidth, deloreanHeight, deloreanSize, deloreanSize);
-
+  
 }
 
 ///////////////////////////////////////////////////
@@ -132,11 +134,9 @@ window.onkeydown = function (e) {
          break;
 
   }
-  
-  
   paintDelorean()
-  
 }
+
 paintDelorean()
 
 //let setIntervalID;
@@ -153,10 +153,5 @@ function repaintingMiniWhite(){
 repaintingMiniWhite()
 //createObstacle()
 
- 
-
-
   }
-
-  
 };
